@@ -70,7 +70,7 @@ int main(){
 				}else{
 					int i = 0;
 					while(buffer[i]!='\0') i++;
-					//printf("I : %d\n", i);
+					
 					buffer[i-3] = '\0';
 
 					printf("PID: %d, Client: %s\n",getpid(), buffer);
@@ -82,23 +82,18 @@ int main(){
 						        buff_out[0] = c;
 						        buff_out[1] = '\0';
 						        send(newSocket, buff_out, strlen(buff_out), 0);
-								//bzero(buffer, sizeof(buffer));
-								bzero(buffer, sizeof(buff_out));
+								
+								bzero(buff_out, sizeof(buff_out));
 						  }
 						  fclose(fp);
 					}
-					//fgets(buff_out, 255, (FILE*)fp);
-					//fscanf(fp, "%s", buff_out);
-					//printf("Server Read : %s\n", buff_out );
-					//send(newSocket, buff_out, strlen(buff_out), 0);
+					
 					bzero(buffer, sizeof(buffer));
-					//bzero(buffer, sizeof(buff_out));
+					
 				}
 			}
 		}else{
-			//printf("PID of parent process = %d\n", getpid());
-			//wait(&status);
-			//close(newSocket);
+			
 		}
 
 	}
