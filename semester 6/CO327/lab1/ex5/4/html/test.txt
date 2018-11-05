@@ -1,0 +1,9 @@
+Linux
+Software
+Linux is a family of free and open-source software operating systems built around the Linux kernel. Typically, Linux is packaged in a form known as a Linux distribution for both desktop and server use. Wikipedia
+Developer: Community; Linus Torvalds
+Written in: C
+License: GPLv2 and other free and open-source licenses (the name "Linux" is a trademark)
+Initial release date: September 17, 1991
+OS family: Unix-like
+Default user interfaces: GNOME, Xfce, KDE Plasma 5, MATE, Cinnamon, Unity, LXDE, elementary OS
