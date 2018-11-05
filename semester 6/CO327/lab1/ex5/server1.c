@@ -71,7 +71,7 @@ int main(){
 			}
 		}else{
 			//printf("PID of parent process = %d\n", getpid());
-			wait(&status);
+			//wait(&status);
 			close(newSocket);
 		}
 
