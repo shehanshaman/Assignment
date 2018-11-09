@@ -1,0 +1,74 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x8697a70 .scope module, "simulate" "simulate" 2 14;
+ .timescale 0 0;
+v0x86caec8_0 .var "s", 0 0;
+v0x86caf18_0 .var "x0", 0 0;
+v0x86cafa0_0 .var "x1", 0 0;
+v0x86cb028_0 .var "x2", 0 0;
+v0x86cb0b0_0 .net "y0", 0 0, L_0x86caf68; 1 drivers
+v0x86cb100_0 .net "y1", 0 0, L_0x86cb520; 1 drivers
+v0x86cb150_0 .net "y2", 0 0, L_0x86cb330; 1 drivers
+S_0x86cab70 .scope module, "shift2" "shift" 2 19, 2 1, S_0x8697a70;
+ .timescale 0 0;
+L_0x86cb1c0 .functor NOT 1, v0x86caec8_0, C4<0>, C4<0>, C4<0>;
+L_0x86cad60 .functor AND 1, v0x86caec8_0, v0x86caf18_0, C4<1>, C4<1>;
+L_0x86cb2a0 .functor AND 1, L_0x86cb1c0, v0x86cb028_0, C4<1>, C4<1>;
+L_0x86cb330 .functor OR 1, L_0x86cb2a0, L_0x86cad60, C4<0>, C4<0>;
+v0x86cabf0_0 .net "and0_out", 0 0, L_0x86cb2a0; 1 drivers
+v0x86cac50_0 .net "and1_out", 0 0, L_0x86cad60; 1 drivers
+v0x86cacb0_0 .net "ns", 0 0, L_0x86cb1c0; 1 drivers
+v0x86cad10_0 .net "s", 0 0, v0x86caec8_0; 1 drivers
+v0x86cad98_0 .net "x0", 0 0, v0x86cb028_0; 1 drivers
+v0x86cade8_0 .net "x1", 0 0, v0x86caf18_0; 1 drivers
+v0x86cae78_0 .alias "y", 0 0, v0x86cb150_0;
+S_0x86ca820 .scope module, "shift1" "shift" 2 20, 2 1, S_0x8697a70;
+ .timescale 0 0;
+L_0x86cb410 .functor NOT 1, v0x86caec8_0, C4<0>, C4<0>, C4<0>;
+L_0x86cb448 .functor AND 1, v0x86caec8_0, v0x86cb028_0, C4<1>, C4<1>;
+L_0x86cb078 .functor AND 1, L_0x86cb410, v0x86cafa0_0, C4<1>, C4<1>;
+L_0x86cb520 .functor OR 1, L_0x86cb078, L_0x86cb448, C4<0>, C4<0>;
+v0x86ca8a0_0 .net "and0_out", 0 0, L_0x86cb078; 1 drivers
+v0x86ca910_0 .net "and1_out", 0 0, L_0x86cb448; 1 drivers
+v0x86ca970_0 .net "ns", 0 0, L_0x86cb410; 1 drivers
+v0x86ca9d0_0 .alias "s", 0 0, v0x86cad10_0;
+v0x86caa40_0 .net "x0", 0 0, v0x86cafa0_0; 1 drivers
+v0x86caab0_0 .alias "x1", 0 0, v0x86cad98_0;
+v0x86cab20_0 .alias "y", 0 0, v0x86cb100_0;
+S_0x8698548 .scope module, "shift0" "shift" 2 21, 2 1, S_0x8697a70;
+ .timescale 0 0;
+L_0x86cb618 .functor NOT 1, v0x86caec8_0, C4<0>, C4<0>, C4<0>;
+L_0x86cb218 .functor AND 1, v0x86caec8_0, v0x86cafa0_0, C4<1>, C4<1>;
+L_0x86caff0 .functor AND 1, L_0x86cb618, v0x86caf18_0, C4<1>, C4<1>;
+L_0x86caf68 .functor OR 1, L_0x86caff0, L_0x86cb218, C4<0>, C4<0>;
+v0x86985c8_0 .net "and0_out", 0 0, L_0x86caff0; 1 drivers
+v0x86ca5b8_0 .net "and1_out", 0 0, L_0x86cb218; 1 drivers
+v0x86ca618_0 .net "ns", 0 0, L_0x86cb618; 1 drivers
+v0x86ca678_0 .alias "s", 0 0, v0x86cad10_0;
+v0x86ca6e0_0 .alias "x0", 0 0, v0x86cade8_0;
+v0x86ca740_0 .alias "x1", 0 0, v0x86caa40_0;
+v0x86ca7c0_0 .alias "y", 0 0, v0x86cb0b0_0;
+    .scope S_0x8697a70;
+T_0 ;
+    %set/v v0x86cb028_0, 0, 1;
+    %set/v v0x86cafa0_0, 0, 1;
+    %set/v v0x86caf18_0, 1, 1;
+    %set/v v0x86caec8_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 32 "$display", "%b %b %b", v0x86cb150_0, v0x86cb100_0, v0x86caf18_0;
+    %delay 10, 0;
+    %set/v v0x86caec8_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 37 "$display", "%b %b %b", v0x86cb150_0, v0x86cb100_0, v0x86cb0b0_0;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "shift1.v";

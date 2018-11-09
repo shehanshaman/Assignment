@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'load2'
+Slack : -0.977
+TNS   : -2.696
+
+Type  : Slow 1200mV 85C Model Setup 'run'
+Slack : -0.897
+TNS   : -3.571
+
+Type  : Slow 1200mV 85C Model Setup 'load1'
+Slack : -0.876
+TNS   : -5.213
+
+Type  : Slow 1200mV 85C Model Hold 'load2'
+Slack : 0.761
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'load1'
+Slack : 0.778
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'run'
+Slack : 0.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'load1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'load2'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'run'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'load2'
+Slack : -0.810
+TNS   : -2.212
+
+Type  : Slow 1200mV 0C Model Setup 'run'
+Slack : -0.738
+TNS   : -2.931
+
+Type  : Slow 1200mV 0C Model Setup 'load1'
+Slack : -0.718
+TNS   : -4.269
+
+Type  : Slow 1200mV 0C Model Hold 'load2'
+Slack : 0.688
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'load1'
+Slack : 0.704
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'run'
+Slack : 0.716
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'load1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'load2'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'run'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'load2'
+Slack : -0.585
+TNS   : -1.632
+
+Type  : Fast 1200mV 0C Model Setup 'run'
+Slack : -0.542
+TNS   : -2.146
+
+Type  : Fast 1200mV 0C Model Setup 'load1'
+Slack : -0.530
+TNS   : -3.140
+
+Type  : Fast 1200mV 0C Model Hold 'load2'
+Slack : 0.985
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'load1'
+Slack : 0.989
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'run'
+Slack : 0.997
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'load1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'load2'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'run'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

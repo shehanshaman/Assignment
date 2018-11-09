@@ -1,0 +1,1 @@
+cat case1.txt | qemu-arm -L /usr/arm-linux-gnueabi p1

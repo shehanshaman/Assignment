@@ -1,0 +1,820 @@
+|CO221
+C[0] <= ALU:mu_alu1.port0
+C[1] <= ALU:mu_alu1.port0
+C[2] <= ALU:mu_alu1.port0
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+load1 => load1.IN1
+load2 => load2.IN1
+op_code[0] => op_code[0].IN1
+op_code[1] => op_code[1].IN1
+op_code[2] => op_code[2].IN1
+op_code[3] => op_code[3].IN1
+run => run.IN1
+
+
+|CO221|ALU:mu_alu1
+C[0] <= or0.DB_MAX_OUTPUT_PORT_TYPE
+C[1] <= or1.DB_MAX_OUTPUT_PORT_TYPE
+C[2] <= or2.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+load1 => load1.IN2
+load2 => load2.IN1
+op_code[0] => op_code[0].IN1
+op_code[1] => op_code[1].IN1
+op_code[2] => op_code[2].IN1
+op_code[3] => op_code[3].IN1
+run => run.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1
+z0 <= fullAdder:fullAdder0.port0
+z1 <= fullAdder:fullAdder1.port0
+z2 <= fullAdder:fullAdder2.port0
+x0 => x0.IN1
+x1 => x1.IN1
+x2 => x2.IN1
+y0 => y0.IN1
+y1 => y1.IN1
+y2 => y2.IN1
+loadA => loadA.IN1
+loadB => loadB.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA
+q3 <= my_Dff:dff3.port0
+q2 <= my_Dff:dff2.port0
+q1 <= my_Dff:dff1.port0
+q0 <= my_Dff:dff0.port0
+p3 => p3.IN1
+p2 => p2.IN1
+p1 => p1.IN1
+p0 => p0.IN1
+clk => clk.IN4
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff3
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff3|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff3|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff3|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff3|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff2
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff2|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff2|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff2|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff2|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff1
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff1|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff1|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff1|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff1|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff0
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff0|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff0|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff0|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerA|my_Dff:dff0|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB
+q3 <= my_Dff:dff3.port0
+q2 <= my_Dff:dff2.port0
+q1 <= my_Dff:dff1.port0
+q0 <= my_Dff:dff0.port0
+p3 => p3.IN1
+p2 => p2.IN1
+p1 => p1.IN1
+p0 => p0.IN1
+clk => clk.IN4
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff3
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff3|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff3|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff3|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff3|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff2
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff2|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff2|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff2|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff2|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff1
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff1|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff1|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff1|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff1|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff0
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff0|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff0|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff0|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|register:registerB|my_Dff:dff0|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder0
+SUM <= halfAdder:halfAdder2.port0
+CO <= or1.DB_MAX_OUTPUT_PORT_TYPE
+CI => CI.IN1
+P => P.IN1
+Q => Q.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder0|halfAdder:halfAdder1
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder0|halfAdder:halfAdder2
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder1
+SUM <= halfAdder:halfAdder2.port0
+CO <= or1.DB_MAX_OUTPUT_PORT_TYPE
+CI => CI.IN1
+P => P.IN1
+Q => Q.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder1|halfAdder:halfAdder1
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder1|halfAdder:halfAdder2
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder2
+SUM <= halfAdder:halfAdder2.port0
+CO <= or1.DB_MAX_OUTPUT_PORT_TYPE
+CI => CI.IN1
+P => P.IN1
+Q => Q.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder2|halfAdder:halfAdder1
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|Adder3bit:Adder3bit1|fullAdder:fullAdder2|halfAdder:halfAdder2
+S <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+C <= and1.DB_MAX_OUTPUT_PORT_TYPE
+A => xor1.IN0
+A => and1.IN0
+B => xor1.IN1
+B => and1.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1
+y2 <= shift:shift2.port0
+y1 <= shift:shift1.port0
+y0 <= shift:shift0.port0
+x2 => x2.IN1
+x1 => x1.IN1
+x0 => x0.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1
+q3 <= my_Dff:dff3.port0
+q2 <= my_Dff:dff2.port0
+q1 <= my_Dff:dff1.port0
+q0 <= my_Dff:dff0.port0
+p3 => p3.IN1
+p2 => p2.IN1
+p1 => p1.IN1
+p0 => p0.IN1
+clk => clk.IN4
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff3
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff3|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff3|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff3|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff3|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff2
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff2|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff2|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff2|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff2|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff1
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff1|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff1|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff1|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff1|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff0
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff0|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff0|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff0|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|register:register1|my_Dff:dff0|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|shift:shift2
+y <= or1.DB_MAX_OUTPUT_PORT_TYPE
+x1 => and1.IN0
+x0 => and2.IN0
+s => and1.IN1
+s => and2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|shift:shift1
+y <= or1.DB_MAX_OUTPUT_PORT_TYPE
+x1 => and1.IN0
+x0 => and2.IN0
+s => and1.IN1
+s => and2.IN1
+
+
+|CO221|ALU:mu_alu1|shift1Bit:shift1Bit1|shift:shift0
+y <= or1.DB_MAX_OUTPUT_PORT_TYPE
+x1 => and1.IN0
+x0 => and2.IN0
+s => and1.IN1
+s => and2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1
+q3 <= my_Dff:dff3.port0
+q2 <= my_Dff:dff2.port0
+q1 <= my_Dff:dff1.port0
+q0 <= my_Dff:dff0.port0
+p3 => p3.IN1
+p2 => p2.IN1
+p1 => p1.IN1
+p0 => p0.IN1
+clk => clk.IN4
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff3
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff3|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff3|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff3|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff3|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff2
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff2|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff2|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff2|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff2|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff1
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff1|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff1|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff1|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff1|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff0
+Q <= my_dlatch:Dlatch2.port0
+D => D.IN1
+clk => clk.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff0|my_dlatch:Dlatch1
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff0|my_dlatch:Dlatch1|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff0|my_dlatch:Dlatch2
+Q <= srlatch:sr1.port0
+nQ <= srlatch:sr1.port1
+D => nand1.IN0
+D => nand2.IN0
+En => nand1.IN1
+En => nand2.IN1
+
+
+|CO221|ALU:mu_alu1|register:register1|my_Dff:dff0|my_dlatch:Dlatch2|srlatch:sr1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+nq <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+s => nand1.IN1
+r => nand2.IN0
+
+
